@@ -22,8 +22,8 @@ $(OBJ_DIR)/%.o: %.cpp
 	@$(CPP) $(CFLAGS) -c $< -o $@
 
 clean:
-	@make -C $(OBJ_DIR) clean
-
+	@rm -f $(OBJ_DIR)/*.o
+	
 fclean: clean
 	@rm -f $(NAME)
 

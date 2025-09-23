@@ -14,6 +14,5 @@
 # define MEGAPHONE
 
 #include <iostream>
-#include <cctype> 
 
 #endif
