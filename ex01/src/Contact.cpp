@@ -5,10 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/24 13:18:52 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/09/24 19:48:04 by gustavo-lin      ###   ########.fr       */
+/*   Created: 2025/09/25 10:01:09 by gustavo-lin       #+#    #+#             */
+/*   Updated: 2025/09/25 11:14:35 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Contact.hpp"
+#include "../include/PhoneBook.hpp"
 
+Contact get_user_informations_to_save_contact (void)
+{
+	std::string temp_reponse;
+	static Contact contact;
+	
+	std::cout << "Insira o nome do contato: ";
+	std::getline(std::cin, temp_reponse);
+	contact.set_first_name(temp_reponse);
+	std::cout << "\nInsira o sobrenome do contato: ";
+	std::getline(std::cin, temp_reponse);
+	contact.set_last_name(temp_reponse);
+	std::cout << "\nInsira o apelido do contato: ";
+	std::getline(std::cin, temp_reponse);
+	contact.set_nickname(temp_reponse);
+	std::cout << "\nInsira o numero de contato: ";
+	std::getline(std::cin, temp_reponse);
+	contact.set_phone_number(temp_reponse);
+	std::cout << "\nInsira um segredo sobre esse contato: ";
+	std::getline(std::cin, temp_reponse);
+	contact.set_darkest_secret(temp_reponse);
+
+	return (contact);
+}

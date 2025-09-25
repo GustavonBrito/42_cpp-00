@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 23:28:11 by gustavo           #+#    #+#             */
-/*   Updated: 2025/09/25 00:55:00 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/09/25 10:21:52 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 
 	typedef Contact		t;
 	
-	Contact( int initial_deposit ) {} ; // Construtor
+	Contact( void ) {} ; // Construtor
 	~Contact( void ) {} ; // Destrutor
 
 	std::string	get_first_name(void) const
@@ -51,30 +51,30 @@ public:
 	}
 	void	set_last_name(std::string last_name)
 	{
-		_last_name = last_name; 
+		_last_name = last_name;
 	}
 	void	set_nickname(std::string nickname)
 	{
-		_nickname = nickname; 
+		_nickname = nickname;
 	}
 	void	set_phone_number(std::string phone_number)
 	{
-		_phone_number = phone_number; 
+		_phone_number = phone_number;
 	}
 	void	set_darkest_secret(std::string darkest_secret)
 	{
-		_darkest_secret = darkest_secret; 
+		_darkest_secret = darkest_secret;
 	}
 
 
 private:
 
-	static int	_nbAccounts;
-	static int	_totalAmount;
-	static int	_totalNbDeposits;
-	static int	_totalNbWithdrawals;
+	// static int	_nbAccounts;
+	// static int	_totalAmount;
+	// static int	_totalNbDeposits;
+	// static int	_totalNbWithdrawals;
 
-	static void	_displayTimestamp( void );
+	// static void	_displayTimestamp( void );
 
 	std::string		_first_name;
 	std::string		_last_name;
@@ -82,8 +82,8 @@ private:
 	std::string		_phone_number;
 	std::string		_darkest_secret;
 
-	Contact( void );
-
 };
+
+Contact get_user_informations_to_save_contact (void);
 
 #endif

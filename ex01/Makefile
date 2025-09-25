@@ -2,9 +2,9 @@ CPP = c++
 
 CFLAGS  = -Wall -Wextra -Werror -std=c++98
 
-NAME = megaphone
+NAME = phonebook
 
-SRC_DIR = ex00
+SRC_DIR = ex01
 
 SRCS =	$(shell find -name '*.cpp')
 
