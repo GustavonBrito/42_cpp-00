@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 13:41:24 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/09/25 12:25:11 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/09/26 01:45:07 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ class		PhoneBook {
 
 public:
 
-	typedef PhoneBook		t;
-
 	PhoneBook(void) {} //Construtor
 	~PhoneBook(void) {} //Destrutor
 	
@@ -34,7 +32,10 @@ public:
 			std::cout << "Contato ja registrado na agenda telefonica !\n";
 			return ;
 		}
-		_contacts[contact_index] = contact;
+		if (contact_index <= 7)
+			_contacts[contact_index] = contact;
+		else
+			_contacts[7] = contact;
 	}
 	
 	Contact	search_contact_by_name(std::string name)
@@ -47,11 +48,6 @@ public:
 		return _contacts[0];
 	}
 	
-	void	exit()
-	{
-		//has to be done yet
-	}
-
 private:
 
 	int		is_contact_saved(Contact contact)
@@ -64,7 +60,7 @@ private:
 		return (0);
 	}
 
-	Contact		_contacts[8];
+	Contact  _contacts[8];
 };
 
 #endif

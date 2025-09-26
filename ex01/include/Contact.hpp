@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 23:28:11 by gustavo           #+#    #+#             */
-/*   Updated: 2025/09/25 10:21:52 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/09/26 01:40:03 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ class Contact {
 
 public:
 
-	typedef Contact		t;
-	
 	Contact( void ) {} ; // Construtor
 	~Contact( void ) {} ; // Destrutor
 
@@ -68,13 +66,6 @@ public:
 
 
 private:
-
-	// static int	_nbAccounts;
-	// static int	_totalAmount;
-	// static int	_totalNbDeposits;
-	// static int	_totalNbWithdrawals;
-
-	// static void	_displayTimestamp( void );
 
 	std::string		_first_name;
 	std::string		_last_name;

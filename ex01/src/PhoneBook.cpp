@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 13:18:49 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/09/25 12:25:39 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/09/26 01:48:38 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void phone_book(const char *method, int contact_index)
 	
 	if (strcmp(method, "ADD") == 0)
 	{
-		contact_instance =  get_user_informations_to_save_contact();
+		contact_instance = get_user_informations_to_save_contact();
 		phone_book_instance.save_contact(contact_instance, contact_index);
 	}
 	else if (strcmp(method, "SEARCH") == 0)
@@ -33,6 +33,7 @@ void phone_book(const char *method, int contact_index)
 	}
 	else
 	{
+		std::cout << "Closing phone book, all contacts will be cleaned on exit.\n";
 		return ;
 	}
 }

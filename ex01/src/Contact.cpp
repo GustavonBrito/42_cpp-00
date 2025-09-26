@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 10:01:09 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/09/25 11:14:35 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/09/26 01:30:25 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Contact get_user_informations_to_save_contact (void)
 {
 	std::string temp_reponse;
-	static Contact contact;
+	Contact contact;
 	
 	std::cout << "Insira o nome do contato: ";
 	std::getline(std::cin, temp_reponse);
