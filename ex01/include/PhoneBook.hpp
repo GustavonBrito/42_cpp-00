@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 13:41:24 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/09/26 01:45:07 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/09/26 16:00:49 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 # define MEGAPHONE
 
 #include <iostream>
+#include <ios>
+#include <limits>
+#include <cstdlib>
 #include "../include/Contact.hpp"
-
-void phone_book(const char *method, int contact_index);
 
 class		PhoneBook {
 
@@ -24,6 +25,11 @@ public:
 
 	PhoneBook(void) {} //Construtor
 	~PhoneBook(void) {} //Destrutor
+	
+	const Contact	*get_all_contacts(void)
+	{
+		return _contacts;
+	}
 	
 	void	save_contact(Contact contact, int contact_index)
 	{
@@ -38,16 +44,19 @@ public:
 			_contacts[7] = contact;
 	}
 	
-	Contact	search_contact_by_name(std::string name)
+	Contact	search_contact_by_index(int index)
 	{		
+		Contact blank_contact;
+
+		blank_contact.set_first_name("");
 		for (int i = 0; i < 8; i++)
 		{
-			if (name == _contacts[i].get_first_name())
+			if (index == i && !_contacts[i].get_first_name().empty())
 				return _contacts[i];
 		}
-		return _contacts[0];
+		return blank_contact;
 	}
-	
+
 private:
 
 	int		is_contact_saved(Contact contact)
@@ -62,5 +71,11 @@ private:
 
 	Contact  _contacts[8];
 };
+
+void phone_book(const char *method, int contact_index);
+void put_header();
+void put_space_between(int space_between);
+void format_single_search(PhoneBook phone_book);
+void format_search_all_contacts(const Contact *all_contacts);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 10:01:47 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/09/25 12:25:29 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/09/26 16:04:52 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 int main(void)
 {
-	int i;
-	
-	i = 0;
+	int i = 0;
 	while (1)
 	{
 		std::string option;
 		std::cout << "Selecione um dos métodos da agenda telefonica\n";
 		std::cout << "Aperte 1 para adicionar um contato.\n";
-		std::cout << "Aperte 2 para procurar um contato na agenda pelo nome.\n";
+		std::cout << "Aperte 2 para mostrar os contatos adicionados na agenda.\n";
 		std::cout << "Aperte 3 para sair.\n";
 		std::getline(std::cin, option);
 		if (option[0] == '1')
@@ -38,7 +36,7 @@ int main(void)
 			return (0);
 		}
 		else
-			std::cout << "Selecione opções validas !";
+			std::cout << "Selecione opções validas !\n";
 	}
 	return (0);
 }
