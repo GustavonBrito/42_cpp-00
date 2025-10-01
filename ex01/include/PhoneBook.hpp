@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 13:41:24 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/09/26 16:00:49 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/09/28 00:33:05 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ private:
 };
 
 void phone_book(const char *method, int contact_index);
-void put_header();
+void put_header(bool is_single_search);
 void put_space_between(int space_between);
 void format_single_search(PhoneBook phone_book);
 void format_search_all_contacts(const Contact *all_contacts);
