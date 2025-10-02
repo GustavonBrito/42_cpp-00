@@ -66,39 +66,19 @@ void format_single_search(PhoneBook phone_book)
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			return ;
 		}
-		put_header(true);
-		std::cout << person_to_search;
-		space_between = 9;
-		put_space_between(space_between);
-		space_between = 10 - contact.get_first_name().size();
-		if (space_between <= 0)
-			std::cout << contact.get_first_name().substr(0, 9) << ".";
-		else
-			std::cout << contact.get_first_name();
-		put_space_between(space_between);
+		std::cout << "First Name: ";
+		std::cout << contact.get_first_name() << '\n'; //Change here
 		space_between = 10 - contact.get_last_name().size();
-		if (space_between <= 0)
-			std::cout << contact.get_last_name().substr(0, 9) << ".";
-		else
-			std::cout << contact.get_last_name();
+		std::cout << contact.get_last_name();
 		put_space_between(space_between);
 		space_between = 10 - contact.get_nickname().size();
-		if (space_between <= 0)
-			std::cout << contact.get_nickname().substr(0, 9) << ".";
-		else
-			std::cout << contact.get_nickname();
+		std::cout << contact.get_nickname();
 		put_space_between(space_between);
 		space_between = 10 - contact.get_phone_number().size();
-		if (space_between <= 0)
-			std::cout << contact.get_phone_number().substr(0, 9) << ".";
-		else
-			std::cout << contact.get_phone_number();
+		std::cout << contact.get_phone_number();
 		put_space_between(space_between);
 		space_between = 10 - contact.get_darkest_secret().size();
-		if (space_between <= 0)
-			std::cout << contact.get_darkest_secret().substr(0, 9) << ".";
-		else
-			std::cout << contact.get_darkest_secret();
+		std::cout << contact.get_darkest_secret();
 		put_space_between(space_between);
 		std::cout << "\n";
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
