@@ -20,7 +20,7 @@ const Contact	*PhoneBook::get_all_contacts(void) const
 
 void	PhoneBook::save_contact(const Contact &contact, int contact_index)
 {
-	if (is_contact_saved(contact) == 1)
+	if (_is_contact_saved(contact) == 1)
 	{
 		std::cout << "Contato ja registrado na agenda telefonica !\n";
 		return ;
@@ -42,6 +42,16 @@ Contact	PhoneBook::search_contact_by_index(int index) const
 			return _contacts[i];
 	}
 	return blank_contact;
+}
+
+int		PhoneBook::_is_contact_saved(const Contact &contact) const
+{
+	for (int i = 0; i < 8; i++)
+	{
+		if (contact.get_first_name() == _contacts[i].get_first_name())
+			return (1);
+	}
+	return (0);
 }
 
 void show_contacts(PhoneBook phone_book)

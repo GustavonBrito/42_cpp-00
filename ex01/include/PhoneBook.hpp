@@ -17,55 +17,19 @@
 #include <ios>
 #include <limits>
 #include <cstdlib>
-#include "Function definition for 'get_all_contacts' not found."
+#include "Contact.hpp"
 
 class		PhoneBook {
 
 public:
 
 	const Contact	*get_all_contacts(void) const;
-	// {
-	// 	return _contacts;
-	// }
-	
 	void	save_contact(const Contact &contact, int contact_index);
-	// {
-	// 	if (is_contact_saved(contact) == 1)
-	// 	{
-	// 		std::cout << "Contato ja registrado na agenda telefonica !\n";
-	// 		return ;
-	// 	}
-	// 	if (contact_index <= 7)
-	// 		_contacts[contact_index] = contact;
-	// 	else
-	// 		_contacts[7] = contact;
-	// }
-	
 	Contact	search_contact_by_index(int index) const;
-	// {		
-	// 	Contact blank_contact;
-
-	// 	blank_contact.set_first_name("");
-	// 	for (int i = 0; i < 8; i++)
-	// 	{
-	// 		if (index == i && !_contacts[i].get_first_name().empty())
-	// 			return _contacts[i];
-	// 	}
-	// 	return blank_contact;
-	// }
 
 private:
 
-	int		is_contact_saved(const Contact &contact) const;
-	// {
-	// 	for (int i = 0; i < 8; i++)
-	// 	{
-	// 		if (contact.get_first_name() == _contacts[i].get_first_name())
-	// 			return (1);
-	// 	}
-	// 	return (0);
-	// }
-
+	int		_is_contact_saved(const Contact &contact) const;
 	Contact  _contacts[8];
 };
 
