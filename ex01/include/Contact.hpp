@@ -6,12 +6,12 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 23:28:11 by gustavo           #+#    #+#             */
-/*   Updated: 2025/10/01 20:49:22 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/10/01 23:47:24 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT
-# define CONTACT
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 #include <iostream>
 #include <string.h>
@@ -19,9 +19,6 @@
 class Contact {
 
 public:
-
-	Contact( void ) {} ; // Construtor
-	~Contact( void ) {} ; // Destrutor
 
 	std::string	get_first_name(void) const
 	{

@@ -6,12 +6,43 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 13:18:49 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/09/26 15:57:33 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/10/01 23:51:47 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/PhoneBook.hpp"
 #include "../include/Contact.hpp"
+
+const Contact	*PhoneBook::get_all_contacts(void) const
+{
+	return _contacts;
+}
+
+void	PhoneBook::save_contact(const Contact &contact, int contact_index)
+{
+	if (is_contact_saved(contact) == 1)
+	{
+		std::cout << "Contato ja registrado na agenda telefonica !\n";
+		return ;
+	}
+	if (contact_index <= 7)
+		_contacts[contact_index] = contact;
+	else
+		_contacts[7] = contact;
+}
+
+Contact	PhoneBook::search_contact_by_index(int index) const
+{		
+	Contact blank_contact;
+
+	blank_contact.set_first_name("");
+	for (int i = 0; i < 8; i++)
+	{
+		if (index == i && !_contacts[i].get_first_name().empty())
+			return _contacts[i];
+	}
+	return blank_contact;
+}
 
 void show_contacts(PhoneBook phone_book)
 {
