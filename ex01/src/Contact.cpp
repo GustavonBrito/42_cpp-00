@@ -63,26 +63,35 @@ void	Contact::set_darkest_secret(std::string darkest_secret)
 	_darkest_secret = darkest_secret;
 }
 
+bool	validate_user_input(std::string input, std::string field)
+{
+	if (field == "name" || field == "second_name")
+	{
+
+	}
+}
+
 Contact get_user_informations_to_save_contact (void)
 {
-	std::string temp_reponse;
+	std::vector<std::string> temp_response;
 	Contact contact;
 	
 	std::cout << "Insira o nome do contato: ";
-	std::getline(std::cin, temp_reponse);
-	contact.set_first_name(temp_reponse);
+	std::getline(std::cin, temp_response[0]);
+	if (validate_user_input(temp_response[0], "name") == false)
+		return ;
 	std::cout << "\nInsira o sobrenome do contato: ";
-	std::getline(std::cin, temp_reponse);
-	contact.set_last_name(temp_reponse);
+	std::getline(std::cin, temp_response[1]);
+	//validate_user_input(temp_response[1], "second_name");
 	std::cout << "\nInsira o apelido do contato: ";
-	std::getline(std::cin, temp_reponse);
-	contact.set_nickname(temp_reponse);
+	std::getline(std::cin, temp_response[2]);
 	std::cout << "\nInsira o numero de contato: ";
-	std::getline(std::cin, temp_reponse);
-	contact.set_phone_number(temp_reponse);
+	std::getline(std::cin, temp_response[3]);
 	std::cout << "\nInsira um segredo sobre esse contato: ";
-	std::getline(std::cin, temp_reponse);
-	contact.set_darkest_secret(temp_reponse);
+	std::getline(std::cin, temp_response[4]);
+	// contact.set_darkest_secret(temp_response);
+	// contact.set_nickname(temp_response);
+	// contact.set_phone_number(temp_response);
 
 	return (contact);
 }

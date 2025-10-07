@@ -15,9 +15,16 @@
 
 #include <iostream>
 #include <string.h>
+#include <vector>
+
+typedef struct user_info_s
+{
+	std::string first_name;
+	
+} user_info_t;
 
 class Contact {
-
+		
 public:
 
 	std::string	get_first_name(void) const;
@@ -42,5 +49,6 @@ private:
 };
 
 Contact get_user_informations_to_save_contact (void);
+bool	validate_user_input(std::string input, std::string field);
 
 #endif
