@@ -25,8 +25,8 @@ int main(void)
 		std::getline(std::cin, option);
 		if (option[0] == '1')
 		{
-			phone_book("ADD", i);
-			i++;
+			if (phone_book("ADD", i) == true)
+				i++;
 		}
 		else if (option[0] == '2')
 			phone_book("SEARCH", i);

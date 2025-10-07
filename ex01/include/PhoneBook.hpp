@@ -24,8 +24,8 @@ class		PhoneBook {
 public:
 
 	const Contact	*get_all_contacts(void) const;
-	void	save_contact(const Contact &contact, int contact_index);
-	Contact	search_contact_by_index(int index) const;
+	bool			save_contact(const Contact &contact, int contact_index);
+	Contact			search_contact_by_index(int index) const;
 
 private:
 
@@ -33,7 +33,7 @@ private:
 	Contact  _contacts[8];
 };
 
-void phone_book(const char *method, int contact_index);
+bool phone_book(const char *method, int contact_index);
 void put_header(bool is_single_search);
 void put_space_between(int space_between);
 void format_single_search(PhoneBook phone_book);

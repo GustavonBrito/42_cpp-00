@@ -18,17 +18,18 @@ const Contact	*PhoneBook::get_all_contacts(void) const
 	return _contacts;
 }
 
-void	PhoneBook::save_contact(const Contact &contact, int contact_index)
+bool	PhoneBook::save_contact(const Contact &contact, int contact_index)
 {
 	if (_is_contact_saved(contact) == 1)
 	{
 		std::cout << "Contato ja registrado na agenda telefonica !\n";
-		return ;
+		return false;
 	}
 	if (contact_index <= 7)
 		_contacts[contact_index] = contact;
 	else
 		_contacts[7] = contact;
+	return true;
 }
 
 Contact	PhoneBook::search_contact_by_index(int index) const
@@ -62,7 +63,7 @@ void show_contacts(PhoneBook phone_book)
 	format_single_search(phone_book);
 }
 
-void phone_book(const char *method, int contact_index)
+bool phone_book(const char *method, int contact_index)
 {
 	static PhoneBook phone_book_instance;
 	Contact contact_instance;
@@ -70,15 +71,11 @@ void phone_book(const char *method, int contact_index)
 	if (strcmp(method, "ADD") == 0)
 	{
 		contact_instance = get_user_informations_to_save_contact();
-		phone_book_instance.save_contact(contact_instance, contact_index);
+		return (phone_book_instance.save_contact(contact_instance, contact_index));
 	}
 	else if (strcmp(method, "SEARCH") == 0)
-	{
 		show_contacts(phone_book_instance);
-	}
 	else
-	{
 		std::cout << "Closing phone book, all contacts will be cleaned on exit.\n";
-		return ;
-	}
+	return true;
 }

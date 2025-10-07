@@ -52,7 +52,6 @@ void format_single_search(PhoneBook phone_book)
 {
 	Contact	contact;
 	std::string temp_contact;
-	int space_between;
 	int	person_to_search;
 	
 	while (1)
@@ -67,20 +66,15 @@ void format_single_search(PhoneBook phone_book)
 			return ;
 		}
 		std::cout << "First Name: ";
-		std::cout << contact.get_first_name() << '\n'; //Change here
-		space_between = 10 - contact.get_last_name().size();
-		std::cout << contact.get_last_name();
-		put_space_between(space_between);
-		space_between = 10 - contact.get_nickname().size();
-		std::cout << contact.get_nickname();
-		put_space_between(space_between);
-		space_between = 10 - contact.get_phone_number().size();
-		std::cout << contact.get_phone_number();
-		put_space_between(space_between);
-		space_between = 10 - contact.get_darkest_secret().size();
-		std::cout << contact.get_darkest_secret();
-		put_space_between(space_between);
-		std::cout << "\n";
+		std::cout << contact.get_first_name() << '\n';
+		std::cout << "Last Name: ";
+		std::cout << contact.get_last_name() << '\n';
+		std::cout << "Nickname: ";
+		std::cout << contact.get_nickname() << '\n';
+		std::cout << "Phone Number: ";
+		std::cout << contact.get_phone_number() << '\n';
+		std::cout << "Darkest Secret: ";
+		std::cout << contact.get_darkest_secret() << '\n';
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		break ;
 	}
