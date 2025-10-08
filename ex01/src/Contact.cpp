@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 10:01:09 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/10/01 23:45:57 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/10/08 10:25:26 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,35 +63,56 @@ void	Contact::set_darkest_secret(std::string darkest_secret)
 	_darkest_secret = darkest_secret;
 }
 
-bool	validate_user_input(std::string input, std::string field)
+bool	validate_user_input(std::vector<std::string> temp_response, int index)
 {
-	if (field == "name" || field == "second_name")
+	if (temp_response[index].empty())
 	{
-
+		std::cout << "Inputs nao podem ser vazios.\n";
+		return false;
 	}
+	if (index == 3)
+	{
+		for(size_t j = 0; j < temp_response[3].size(); j++)
+		{
+			if (isdigit(temp_response[3][j]) == 0)
+			{
+				std::cout << "Apenas digito é aceito no campo telefonico.\n";
+				return false;
+			}
+		}
+	}
+	return true;
 }
 
 Contact get_user_informations_to_save_contact (void)
 {
-	std::vector<std::string> temp_response;
+	std::vector<std::string> temp_response(5);
 	Contact contact;
 	
 	std::cout << "Insira o nome do contato: ";
 	std::getline(std::cin, temp_response[0]);
-	if (validate_user_input(temp_response[0], "name") == false)
-		return ;
+	if (!validate_user_input(temp_response, 0))
+		return (contact);
 	std::cout << "\nInsira o sobrenome do contato: ";
 	std::getline(std::cin, temp_response[1]);
-	//validate_user_input(temp_response[1], "second_name");
+	if (!validate_user_input(temp_response, 1))
+		return (contact);
 	std::cout << "\nInsira o apelido do contato: ";
 	std::getline(std::cin, temp_response[2]);
+	if (!validate_user_input(temp_response, 2))
+		return (contact);
 	std::cout << "\nInsira o numero de contato: ";
 	std::getline(std::cin, temp_response[3]);
+	if (!validate_user_input(temp_response, 3))
+		return (contact);
 	std::cout << "\nInsira um segredo sobre esse contato: ";
 	std::getline(std::cin, temp_response[4]);
-	// contact.set_darkest_secret(temp_response);
-	// contact.set_nickname(temp_response);
-	// contact.set_phone_number(temp_response);
-
+	if (!validate_user_input(temp_response, 4))
+		return (contact);
+	contact.set_first_name(temp_response[0]);
+	contact.set_last_name(temp_response[1]);
+	contact.set_nickname(temp_response[2]);
+	contact.set_phone_number(temp_response[3]);
+	contact.set_darkest_secret(temp_response[4]);
 	return (contact);
 }

@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 23:28:11 by gustavo           #+#    #+#             */
-/*   Updated: 2025/10/01 23:47:24 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/10/08 10:22:17 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include <string.h>
 #include <vector>
+#include <algorithm>
+#include <cctype>
 
 typedef struct user_info_s
 {
@@ -49,6 +51,6 @@ private:
 };
 
 Contact get_user_informations_to_save_contact (void);
-bool	validate_user_input(std::string input, std::string field);
+bool	validate_user_input(std::vector<std::string> temp_response, int index);
 
 #endif

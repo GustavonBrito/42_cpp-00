@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 13:18:49 by gustavo-lin       #+#    #+#             */
-/*   Updated: 2025/10/01 23:51:47 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/10/08 10:14:41 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ bool phone_book(const char *method, int contact_index)
 	if (strcmp(method, "ADD") == 0)
 	{
 		contact_instance = get_user_informations_to_save_contact();
+		if (contact_instance.get_first_name().empty())
+			return false;
 		return (phone_book_instance.save_contact(contact_instance, contact_index));
 	}
 	else if (strcmp(method, "SEARCH") == 0)
