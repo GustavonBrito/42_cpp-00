@@ -6,7 +6,7 @@
 /*   By: gustavo-linux <gustavo-linux@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 23:28:11 by gustavo           #+#    #+#             */
-/*   Updated: 2025/10/08 10:22:17 by gustavo-lin      ###   ########.fr       */
+/*   Updated: 2025/10/08 12:12:59 by gustavo-lin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,6 @@
 #include <vector>
 #include <algorithm>
 #include <cctype>
-
-typedef struct user_info_s
-{
-	std::string first_name;
-	
-} user_info_t;
 
 class Contact {
 		
