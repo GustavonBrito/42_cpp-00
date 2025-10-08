@@ -7,14 +7,15 @@
 //                                                                            //
 // ************************************************************************** //
 
+#ifndef ACCOUNT_HPP
+#define ACCOUNT_HPP
 
-#pragma once
-#ifndef __ACCOUNT_H__
-#define __ACCOUNT_H__
-
-// ************************************************************************** //
-//                               Account Class                                //
-// ************************************************************************** //
+#include <vector>
+#include <algorithm>
+#include <functional>
+#include <iostream>
+#include <ctime>
+#include <string>
 
 class Account {
 
@@ -56,14 +57,4 @@ private:
 
 };
 
-
-
-// ************************************************************************** //
-// vim: set ts=4 sw=4 tw=80 noexpandtab:                                      //
-// -*- indent-tabs-mode:t;                                                   -*-
-// -*- mode: c++-mode;                                                       -*-
-// -*- fill-column: 75; comment-column: 75;                                  -*-
-// ************************************************************************** //
-
-
-#endif /* __ACCOUNT_H__ */
+#endif
